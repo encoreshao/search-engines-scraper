@@ -1,0 +1,3 @@
+requests[socks]
+flask
+bs4
