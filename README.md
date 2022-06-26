@@ -10,7 +10,6 @@ export FLASK_ENV=development
 flask run
 ```
 
-## Requests
+## Screenshot
 
-- https://scraper.ranbot.online/google?q=google.com
-- https://scraper.ranbot.online/bing?q=google.com
+![https://scraper.ranbot.online](https://github.com/encoreshao/search-engines-scraper/tree/main/assets/google-scraper.png?raw=true)

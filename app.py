@@ -25,44 +25,60 @@ def get_beer():
     return render_template('index.html', beer=beer)
 
 
-@app.route("/google")
+@app.route("/google", methods=['POST'])
 def google():
-    keyword = request.args.get('q')
-    pages = int(request.args.get('pages', 1))
-    engine = Google()
-    results = engine.search(keyword, pages)
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        keyword = request.json['q']
+        pages = int(request.json['pages'] | 1)
+        engine = Google()
+        results = engine.search(keyword, pages)
 
-    return jsonify(results.results())
+        return jsonify(results.results())
+    else:
+        return 'Content-Type not supported!'
 
 
-@app.route("/bing")
+@ app.route("/bing", methods=['POST'])
 def bing():
-    keyword = request.args.get('q')
-    pages = int(request.args.get('pages', 1))
-    engine = Bing()
-    results = engine.search(keyword, pages)
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        keyword = request.json['q']
+        pages = int(request.json['pages'] | 1)
+        engine = Bing()
+        results = engine.search(keyword, pages)
 
-    return jsonify(results.results())
+        return jsonify(results.results())
+    else:
+        return 'Content-Type not supported!'
 
 
-@app.route("/aol")
+@ app.route("/aol", methods=['POST'])
 def aol():
-    keyword = request.args.get('q')
-    pages = int(request.args.get('pages', 1))
-    engine = Aol()
-    results = engine.search(keyword, pages)
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        keyword = request.json['q']
+        pages = int(request.json['pages'] | 1)
+        engine = Aol()
+        results = engine.search(keyword, pages)
 
-    return jsonify(results.results())
+        return jsonify(results.results())
+    else:
+        return 'Content-Type not supported!'
 
 
-@app.route("/duckduckgo")
+@ app.route("/duckduckgo", methods=['POST'])
 def duckduckgo():
-    keyword = request.args.get('q')
-    pages = int(request.args.get('pages', 1))
-    engine = Duckduckgo()
-    results = engine.search(keyword, pages)
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        keyword = request.json['q']
+        pages = int(request.json['pages'] | 1)
+        engine = Duckduckgo()
+        results = engine.search(keyword, pages)
 
-    return jsonify(results.results())
+        return jsonify(results.results())
+    else:
+        return 'Content-Type not supported!'
 
 
 if __name__ == '__main__':
