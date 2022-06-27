@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to Search Engine
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www
+Environment="PATH=/var/www/production/search-engine-scraper/venv/bin"
+ExecStart=/var/www/production/search-engine-scraper/venv/bin/gunicorn --bind 0.0.0.0:5000 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

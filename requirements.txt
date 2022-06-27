@@ -1,3 +1,4 @@
 requests[socks]
+gunicorn
 flask
 bs4
