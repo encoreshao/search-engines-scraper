@@ -1,11 +1,7 @@
-
 <article class="panel is-link">
-  <p class="panel-heading">
-    Search results for { <strong>{{ keyword }}</strong> }
-  </p>
-
+  <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
   {% for item in results %}
-    <a class="panel-block has-text-black-ter has-background-link-light p-2" href={{ item.link }}>
+    <a class="panel-block has-text-black-ter has-background-link-light px-5 py-2" href={{ item.link }} target="_blank">
       <span class="panel-icon">
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
@@ -13,4 +9,5 @@
       <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>{{ item.host }}</span>
     </a>
   {% endfor %}
+  <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
 </article>

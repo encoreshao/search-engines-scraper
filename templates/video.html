@@ -1,64 +1,404 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="box">
-          <figure class="image is-16by9">
-            <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4"
-              frameborder="0" allowfullscreen></iframe>
-          </figure>
-          <hr />
-          <h2 class="title has-text-grey">
-            Big Buck Bunny
-          </h2>
-          <p class="subtitle has-text-grey-light">
-            Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three
-            rodents
-            rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he
-            prepares the nasty rodents a comical revenge.
-          </p>
+  <div class="container clearfix">
+    <div class="tabs is-centered is-boxed is-medium">
+      <ul>
+        <li class="is-active" data-tabname="tab-pictures">
+          <a>
+            <span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span>
+            <span>Bruno Mars</span>
+          </a>
+        </li>
+        <li data-tabname="tab-music">
+          <a>
+            <span class="icon"><i class="fas fa-music" aria-hidden="true"></i></span>
+            <span>Music</span>
+          </a>
+        </li>
+        <li data-tabname="tab-videos">
+          <a>
+            <span class="icon"><i class="fas fa-film" aria-hidden="true"></i></span>
+            <span>Videos</span>
+          </a>
+        </li>
+        <li data-tabname="tab-documents">
+          <a>
+            <span class="icon"><i class="far fa-file-alt" aria-hidden="true"></i></span>
+            <span>Documents</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tabs-content" id="tab-pictures">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/PMivT7MJ41M"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Bruno Mars - That’s What I Like [Official Music Video]
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/P-WdrMLLpPg"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Mark Ronson & Bruno Mars Perform 'Uptown Funk'
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
         </div>
       </div>
 
-      <div class="column">
-        <div class="box">
-          <figure class="image is-16by9">
-            <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/Vtie-65eJ3U"
-              frameborder="0" allowfullscreen></iframe>
-          </figure>
-          <hr />
-          <h2 class="title has-text-grey">
-            AI-Driven Digital Transformation | Ekohe
-          </h2>
-          <p class="subtitle has-text-grey-light">
-            From AI-driven predictive insights to machine learning automation, Ekohe delivers best-in-class, custom digital
-            solutions that move your business forward.
-          </p>
-          <p class="description">
-            AI, Machine Learning,Data Science, and Agile Development.ruby on rails agency, custom mobile app development,
-            custom
-            web
-            app development, android app developers, android application developer, android applications development,
-            android apps
-            development, android software development, app designer, app development cost, apple ios developer, apple app
-            developer,
-            iphone app developer, create an android app, create android app, creating android apps, create ios app, creating
-            iphone
-            apps, design mobile website, develop iphone apps, developing apps for android, developing for android,
-            developing
-            iphone
-            apps, how to create an app for android, Ruby on Rails web design, Ruby on Rails consulting, Ruby on Rails
-            service,
-            Ruby
-            on Rails consultant, Ruby on Rails expertise, app developer Shanghai, app developer Paris, app developer
-            Vancouver,
-            app
-            developer Tokyo
-          </p>
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/UqyT8IEBkvY"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Bruno Mars - 24K Magic (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/SR6iYWJxHqs"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Bruno Mars - Grenade (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content is-hidden" id="tab-music">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/_OFdyTRrk68"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Try not to sing TikTok songs 2022
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/hLQl3WQQoQ0"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Adele - Someone Like You (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/lp-EO5I60KA"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Ed Sheeran - Thinking Out Loud (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/2Vv-BfVoq4g" frameborder="0"
+                allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Ed Sheeran - Perfect (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+              Nov 9, 2017
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/JGwWNGJdvx8" frameborder="0"
+                allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Ed Sheeran - Shape of You (Official Music Video)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+              Jan 30, 2017
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/K0ibBPhiaG0" frameborder="0"
+                allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Ed Sheeran - Castle On The Hill [Official Music Video]
+            </h3>
+            <p class="subtitle has-text-grey-light">
+              Jan 23, 2017
+            </p>
+            <p class="description">
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content is-hidden" id="tab-videos">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              Big Buck Bunny
+            </h3>
+            <p class="subtitle has-text-grey-light">
+              Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three
+              rodents
+              rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he
+              prepares the nasty rodents a comical revenge.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/Vtie-65eJ3U"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              AI-Driven Digital Transformation | Ekohe
+            </h3>
+            <p class="subtitle has-text-grey-light">
+              From AI-driven predictive insights to machine learning automation, Ekohe delivers best-in-class, custom digital
+              solutions that move your business forward.
+            </p>
+            <p class="description">
+              AI, Machine Learning,Data Science, and Agile Development.ruby on rails agency, custom mobile app development,
+              custom
+              web
+              app development, android app developers, android application developer, android applications development,
+              android apps
+              development, android software development, app designer, app development cost, apple ios developer, apple app
+              developer,
+              iphone app developer, create an android app, create android app, creating android apps, create ios app, creating
+              iphone
+              apps, design mobile website, develop iphone apps, developing apps for android, developing for android,
+              developing
+              iphone
+              apps, how to create an app for android, Ruby on Rails web design, Ruby on Rails consulting, Ruby on Rails
+              service,
+              Ruby
+              on Rails consultant, Ruby on Rails expertise, app developer Shanghai, app developer Paris, app developer
+              Vancouver,
+              app
+              developer Tokyo
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tabs-content is-hidden" id="tab-documents">
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/UwsrzCVZAb8"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              How Far is Too Far? | The Age of A.I.
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+              Can A.I. make music? Can it feel excitement and fear? Is it alive? Will.i.am and Mark Sagar push the limits of what a
+              machine can do. How far is too far, and how much further can we go?
+
+              The Age of A.I. is a 8 part documentary series hosted by Robert Downey Jr. covering the ways Artificial Intelligence,
+              Machine Learning and Neural Networks will change the world.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/Aw3R-4UC4wI"
+                frameborder="0" allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              What Elon Musk's 42,000 Satellites Could Do To Earth
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+              Over the next few decades, Elon Musk is hoping to send 42,000 Starlink satellites to space. With these satellites,
+              SpaceX hopes to bring high-speed satellite internet to every corner of the world. But experts worry it may come at a
+              hefty cost, blocking astronomers' views and potentially space exploration for decades.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns">
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/63yr9dlI0cU" frameborder="0"
+                allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              TIMELAPSE OF ARTIFICIAL INTELLIGENCE (2028 – 3000+)
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+              A documentary and journey into the future exploring the possibilities and predictions of artificial intelligence. This
+              timelapse of the future explores what is coming, from robots that are too fast for humans to see, to A.I. bots from
+              Microsoft (bringing back loved ones to life) and Google’s laMDA (replacing the need for online searches).
+
+              Elon Musk’s Neuralink goes from a medical and healthcare device, to helping people become superhuman – with intelligence
+              amplification, and add-ons that connect to the brain chip.
+
+              Artificial general intelligence begins to design an A.I. more powerful than itself. People begin to question if humanity
+              has reached the technological singularity. Artificial Super Intelligence emerges from the AGI.
+
+              And further into the deep future. Human consciousness becomes digitized and uploaded into a metaverse simulation. It is
+              merged with A.I. creating hybrid consciousness – which spreads across the cosmos. Matrioshka brains and Dyson Spheres
+              host humanity’s consciousness in a cosmic simulation network.
+            </p>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="box">
+            <figure class="image is-16by9">
+              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/ajGgd9Ld-Wc" frameborder="0"
+                allowfullscreen></iframe>
+            </figure>
+            <hr />
+            <h3 class="title has-text-grey">
+              How AI can save our humanity | Kai-Fu Lee
+            </h3>
+            <p class="subtitle has-text-grey-light">
+            </p>
+            <p class="description">
+              AI is massively transforming our world, but there's one thing it cannot do: love. In a visionary talk, computer
+              scientist Kai-Fu Lee details how the US and China are driving a deep learning revolution -- and shares a blueprint for
+              how humans can thrive in the age of AI by harnessing compassion and creativity. "AI is serendipity," Lee says. "It is
+              here to liberate us from routine jobs, and it is here to remind us what it is that makes us human."
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+{% endblock %}
+
+
+{% block script_content %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      // Check for click events on the navbar burger icon
+      $("div.tabs ul li").on('click', function(event) {
+        event.preventDefault();
+        $this = $(this);
+
+        if ($this.hasClass('is-active')) {
+          // Nothing to do
+        } else {
+          console.log('Toggling');
+
+          $this.siblings().removeClass("is-active");
+          $this.addClass("is-active");
+
+          $("div.tabs-content:not(.is-hidden)").addClass("is-hidden");
+          $('#' + $this.data('tabname')).removeClass('is-hidden');
+        }
+      });
+    });
+  </script>
 {% endblock %}
