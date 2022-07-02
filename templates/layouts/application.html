@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Engine Scraper - RanBOT</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://bulma.io/vendor/fontawesome-free-5.15.2-web/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+
+<body>
+  <section class="hero is-info is-fullheight">
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href='/'>
+              <h1 class="is-info">Google Scraper</h1>
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroB">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+            <div class="navbar-end">
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="/">
+                  <span class="icon">
+                    <i class="fa fa-home"></i>
+                  </span>
+                  <span>Home</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="/video">
+                  <span class="icon">
+                    <i class="fa fa-video"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="https://ranbot.online">
+                  <span class="icon">
+                    <i class="fa fa-robot"></i>
+                  </span>
+                  <span>RanBOT</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="https://icmoc.com">
+                  <span class="icon">
+                    <i class="fa fa-book"></i>
+                  </span>
+                  <span>Encore</span>
+                </a>
+              </span>
+              <span class="navbar-item">
+                <a class="button is-white is-outlined" href="https://github.com/encoreshao" target="_blank">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span class="is-info">Github</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="hero-body">
+      {% block content %}{% endblock %}
+    </div>
+
+    <div class="hero-foot">
+      <div class="container">
+        <div class="content has-text-centered footer" style="background: none;">
+          <p>
+            Build by <strong>Bulma</strong> and <strong>Flask</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% block script_content %}{% endblock %}
+</body>
+</html>
