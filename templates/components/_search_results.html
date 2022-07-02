@@ -6,7 +6,9 @@
         <i class="fas fa-book" aria-hidden="true"></i>
       </span>
       {{ item.title }}
-      <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>{{ item.host }}</span>
+      {% if item.host %}
+        <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>{{ item.host }}</span>
+      {% endif %}
     </a>
   {% endfor %}
   <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>

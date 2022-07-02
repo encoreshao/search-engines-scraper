@@ -20,7 +20,7 @@ class Metager(SearchEngine):
             'text': 'div.result-description',
             'links': '#results div.result',
             'next': '#next-search-link a',
-            }
+        }
         return selectors[element]
 
     def redirect(self, query):

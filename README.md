@@ -13,10 +13,11 @@ export FLASK_ENV=development
 flask run
 ```
 
-## Technology stack
+## Technology Stack
 
 - UI: [Bulma](https://bulma.io/documentation/utilities/functions/)
-- API: [Python Flask](https://flask.palletsprojects.com/)
+- Icons: [Fontawesome](https://fontawesome.com/v5/docs/web/setup/host-font-awesome-yourself)
+- Backend API: [Flask](https://flask.palletsprojects.com/)
 - Scraper: [Search-Engines-Scraper](https://github.com/tasos-py/Search-Engines-Scraper)
 
 ## Screenshots

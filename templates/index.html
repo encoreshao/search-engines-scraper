@@ -15,17 +15,30 @@
       <div class="field is-grouped">
         <p class="control is-expanded">
           <div class="select is-link">
-            <select id="pages">
-              {% for page in range(6, 0, -1) %}
-                <option value={{page}} selected={{page == 1}}> TOP {{page * 10}} </option>
-              {% endfor %}
+            <select id="browser">
+              <option value='google' selected='true'>Google</option>
+              <option value='aol'>Aol</option>
+              <option value='bing'>Bing</option>
+              <option value='duckduckgo'>DuckDuckGo</option>
+              <option value='ask'>Ask</option>
+              <option value='torch'>Torch</option>
+              <option value='qwant'>Qwant</option>
+              <option value='mojeek'>Mojeek</option>
+              <option value='dogpile'>Dogpile</option>
             </select>
           </div>
           <input class="input" type="text" placeholder="Search ..." id="keyword">
+          <div class="select is-link">
+            <select id="pages">
+              {% for page in range(6, 0, -1) %}
+              <option value={{page}} selected={{page==1}}> TOP {{page * 10}} </option>
+              {% endfor %}
+            </select>
+          </div>
         </p>
         <p class="control">
           <a class="button is-link" id="search">
-            Goooogle
+            Search
           </a>
         </p>
       </div>
@@ -55,6 +68,8 @@
       event.preventDefault();
       var $keyword = $("#keyword").val();
       var $pages = $("#pages").val();
+      var $browser = $("#browser").val();
+
       if ($keyword === '') { return }
 
       $this = $(this);
@@ -67,8 +82,8 @@
 
       // Send the data using post
       $.post(
-        '/google',
-        JSON.stringify({ 'q': $keyword, 'pages': $pages })
+        '/scraper',
+        JSON.stringify({ 'q': $keyword, 'pages': $pages, 'browser': $browser })
       ).done(function (response) {
         $progress.addClass('is-hidden');
         $this.removeClass("is-loading disabled");
