@@ -1,6 +1,6 @@
-# Search Engines
+# Goooogle
 
-Simple way to get JSON response data from Google search engine
+Simple way to get view search results from Google search engine
 
 ## Installation
 
@@ -14,5 +14,11 @@ flask run
 ```
 
 ## Views
+
+- Loading
+
+![https://scraper.ranbot.online](https://github.com/encoreshao/search-engines-scraper/blob/main/assets/google-loading.png)
+
+- Search Results
 
 ![https://scraper.ranbot.online](https://github.com/encoreshao/search-engines-scraper/blob/main/assets/google-scraper.png)
