@@ -17,12 +17,7 @@
           <div class="select is-link">
             <select id="pages">
               {% for page in range(6, 0, -1) %}
-                {% if page == 1 %}
-                {% set page_text = 'Page' %}
-                {% else %}
-                {% set page_text = 'Pages' %}
-                {% endif %}
-                <option value={{page}} selected={{page == 1}} > {{page}} {{page_text}} </option>
+                <option value={{page}} selected={{page == 1}}> TOP {{page * 10}} </option>
               {% endfor %}
             </select>
           </div>
