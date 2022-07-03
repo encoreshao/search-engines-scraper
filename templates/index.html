@@ -1,5 +1,9 @@
 {% extends 'layouts/application.html' %}
 
+{% block head_title %}
+  Search Engine Scraper - RanBOT
+{% endblock %}
+
 {% block content %}
   <div class="container has-text-centered">
     <div class="column is-6 is-offset-3">
@@ -45,11 +49,10 @@
     </div>
 
     <div>
+      <div id="results"></div>
       <div class="box is-hidden p-6" id="progress">
         <progress class="progress is-small is-link" max="100">15%</progress>
       </div>
-
-      <div id="results"></div>
     </div>
   </div>
 {% endblock %}

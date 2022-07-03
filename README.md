@@ -1,6 +1,6 @@
 # Goooogle
 
-Simple way to view search results from Google search engine
+Simple way to view search results from search engine (Google, Bing, Aol, etc.)
 
 ## Installation
 
@@ -32,18 +32,18 @@ flask run
 
 ## Python
 
-- ues common layout (code block)
+- used common layout [code block]
 
 ```python3
 {% extends 'layouts/application.html' %}
 ```
 
-- python script in Flask Template
+- Python script in flask template
 
 ```python3
   {% if page == 1 %}
-  {% set page_text = 'Page' %}
+  {% set page_text = 'Value 1' %}
   {% else %}
-  {% set page_text =  %}
+  {% set page_text = 'Value 2' %}
   {% endif %}
 ```
