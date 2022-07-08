@@ -1,6 +1,6 @@
 # Goooogle
 
-Simple way to view search results from search engine (Google, Bing, Aol, etc.)
+A simple way to view search results from the search engines (Google, Bing, AOL, etc.)
 
 ## Installation
 
@@ -19,6 +19,7 @@ flask run
 - Icons: [Fontawesome](https://fontawesome.com/v5/docs/web/setup/host-font-awesome-yourself)
 - Backend API: [Flask](https://flask.palletsprojects.com/)
 - Scraper: [Search-Engines-Scraper](https://github.com/tasos-py/Search-Engines-Scraper)
+- Random Image: [Unsplash](https://unsplash.it/1200/900?random)
 
 ## Screenshots
 

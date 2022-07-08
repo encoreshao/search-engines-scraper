@@ -3,7 +3,7 @@ require 'mina/deploy'
 require 'mina/git'
 
 set :application_name, 'search-engines-scraper'
-set :repository, 'git@github.com:encoreshao/search-engines-scraper.git'
+set :repository, 'https://github.com/encoreshao/search-engines-scraper.git'
 set :shared_dirs, fetch(:shared_dirs, []).push('pids', 'sockets', 'log', 'public')
 set :forward_agent, true
 set :stages, %w(production)
