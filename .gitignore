@@ -3,3 +3,6 @@ __pycache__/
 *.json
 *.egg-info
 dist/
+
+# ignore env folders
+search-engines-scraper-venv/
