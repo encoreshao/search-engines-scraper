@@ -1,0 +1,30 @@
+{% for item in results %}
+<div class="is-flex-direction-column m-1">
+  <div class="card">
+    <div class="card-content">
+      <p class="title has-text-info">
+        {{ item.title }}
+      </p>
+      <p class="subtitle">
+        <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>
+          <i class="fas fa-sitemap pr-2" aria-hidden="true"></i>
+          {{ item.host }}
+        </span>
+      </p>
+      {% if item.text %}
+      <div class="content">
+        {{ item.text }}
+      </div>
+      {% endif %}
+    </div>
+
+    <footer class="card-footer">
+      <p class="card-footer-item">
+        <span>
+          View on <a href={{ item.link }} class="has-text-link">Website</a>
+        </span>
+      </p>
+    </footer>
+  </div>
+</div>
+{% endfor %}
