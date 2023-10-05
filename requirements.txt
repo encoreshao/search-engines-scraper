@@ -1,4 +1,5 @@
 requests[socks]
 gunicorn
-flask
+flask=1.1.4
+markupsafe=1.1.1
 bs4

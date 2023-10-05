@@ -1,15 +1,25 @@
-<article class="panel is-link">
-  <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
-  {% for item in results %}
-    <a class="panel-block has-text-black-ter has-background-link-light px-5 py-2" href={{ item.link }} target="_blank">
-      <span class="panel-icon">
-        <i class="fas fa-sitemap" aria-hidden="true"></i>
-      </span>
-      {{ item.title }}
-      {% if item.host %}
-        <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>{{ item.host }}</span>
-      {% endif %}
-    </a>
-  {% endfor %}
-  <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
-</article>
+{% if results %}
+  <article class="panel is-link">
+    <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
+    {% for item in results %}
+      <a class="panel-block has-text-black-ter has-background-link-light px-5 py-2" href={{ item.link }} target="_blank">
+        <span class="panel-icon">
+          <i class="fas fa-sitemap" aria-hidden="true"></i>
+        </span>
+        {{ item.title }}
+        {% if item.host %}
+          <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>{{ item.host }}</span>
+        {% endif %}
+      </a>
+    {% endfor %}
+    <a class="panel-block has-text-black-ter has-background-link-light p-2"></a>
+  </article>
+{% else %}
+  <div class="card">
+    <div class="card-content">
+      <div class="content">
+        <span class='has-text-weight-bold is-uppercase'>No Search Results...</span>
+      </div>
+    </div>
+  </div>
+{% endif %}
