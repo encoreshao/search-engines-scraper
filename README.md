@@ -8,6 +8,9 @@ A simple way to view search results from the search engines (Google, Bing, AOL, 
 python3 -m venv search-engines-scraper-venv
 source search-engines-scraper-venv/bin/activate
 
+
+<!-- pip install -r requirements.txt -->
+
 python3 setup.py install
 export FLASK_ENV=development
 flask run
