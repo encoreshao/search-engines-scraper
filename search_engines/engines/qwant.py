@@ -51,9 +51,15 @@ class Qwant(SearchEngine):
     
     def _filter_results(self, soup):
         '''Processes and filters the search results.''' 
-        tags = loads(soup.get_text())['data']['result']['items']['mainline']
-        tags = [j for i in tags for j in i['items'] if i['type'] != u'ads']
-        results = [self._item(l) for l in tags]
+        try:
+            data = loads(soup.get_text())
+            if 'data' not in data or 'result' not in data.get('data', {}):
+                return []
+            tags = data['data']['result']['items']['mainline']
+            tags = [j for i in tags for j in i.get('items', []) if i.get('type') != u'ads']
+            results = [self._item(l) for l in tags]
+        except (KeyError, TypeError, ValueError):
+            return []
 
         if u'url' in self._filters:
             results = [l for l in results if self._query_in(l['link'])]

@@ -1,291 +1,294 @@
 {% extends 'layouts/application.html' %}
 
 {% block head_title %}
-  Video | Search Engine Scraper - RanBOT
+  Video Gallery | SearchBot - RanBOT Labs
 {% endblock %}
 
 {% block content %}
-  <div class="container clearfix">
-    <div class="tabs is-centered is-boxed is-medium">
-      <ul>
-        <li class="is-active" data-tabname="tab-pictures">
-          <a>
-            <span class="icon"><i class="fas fa-image" aria-hidden="true"></i></span>
-            <span>Pictures</span>
-          </a>
-        </li>
-        <li data-tabname="tab-music">
-          <a>
-            <span class="icon"><i class="fas fa-music" aria-hidden="true"></i></span>
-            <span>Music</span>
-          </a>
-        </li>
-        <li data-tabname="tab-videos">
-          <a>
-            <span class="icon"><i class="fas fa-film" aria-hidden="true"></i></span>
-            <span>Videos</span>
-          </a>
-        </li>
-        <li data-tabname="tab-documents">
-          <a>
-            <span class="icon"><i class="far fa-file-alt" aria-hidden="true"></i></span>
-            <span>Documents</span>
-          </a>
-        </li>
-      </ul>
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-4">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+        </svg>
+        Curated Content
+      </div>
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold text-slate-900 mb-3">
+        Video Gallery
+      </h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">
+        Explore curated videos on <span class="text-purple-600 font-semibold">AI, technology</span>, and entertainment
+      </p>
     </div>
 
+    <!-- Tabs -->
+    <div class="flex justify-center mb-8">
+      <div class="bg-white rounded-2xl p-1.5 inline-flex gap-1 shadow-lg shadow-slate-200/50 border border-slate-100">
+        <button data-tabname="tab-pictures" class="tab-btn is-active px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            Featured
+          </span>
+        </button>
+        <button data-tabname="tab-music" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+            </svg>
+            Music
+          </span>
+        </button>
+        <button data-tabname="tab-videos" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/>
+            </svg>
+            Videos
+          </span>
+        </button>
+        <button data-tabname="tab-documents" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Docs
+          </span>
+        </button>
+        <button data-tabname="tab-ai-agents" class="tab-btn px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-200 cursor-pointer">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            AI Agents
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Content: Featured -->
     <div class="tabs-content" id="tab-pictures">
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360"  src="https://www.youtube.com/embed/2JyGBG9dUmw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/2JyGBG9dUmw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">
               Animated Short Film: "Spring"
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-            </p>
+            <p class="text-sm text-slate-500 mt-1">Beautiful animated short film</p>
           </div>
         </div>
 
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/P-WdrMLLpPg"
-                frameborder="0" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/P-WdrMLLpPg" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">
               Mark Ronson & Bruno Mars Perform 'Uptown Funk'
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-            </p>
+            <p class="text-sm text-slate-500 mt-1">Live performance</p>
           </div>
         </div>
-      </div>
 
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/EpipswT-LuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer md:col-span-2 border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/EpipswT-LuE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">
               War, AI and the New Global Arms Race | Alexandr Wang | TED
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-            </p>
+            <p class="text-sm text-slate-500 mt-1">TED Talk on AI and global security</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="tabs-content is-hidden" id="tab-music">
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/_MaKJdOiRZA" title="Charlie Puth, Ed Sheeran, Martin Garrix &amp; Kygo, The Chainsmokers Style - Summer Nostalgia Mix" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
-              Charlie Puth, Ed Sheeran, Martin Garrix & Kygo, The Chainsmokers Style - Summer Nostalgia Mix
-            </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-            </p>
+    <!-- Tab Content: Music -->
+    <div class="tabs-content hidden" id="tab-music">
+      <div class="grid grid-cols-1 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/vG3G58bl6wM" title="Focus Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/vG3G58bl6wM" title="Focus Music For Work And Studying /  Background Music For Concentration, Study Music, Thinking Music" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
-              Focus Music For Work And Studying / Background Music For Concentration, Study Music, Thinking Music
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200">
+              Focus Music For Work And Studying
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-            </p>
+            <p class="text-sm text-slate-500 mt-1">Background music for concentration</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="tabs-content is-hidden" id="tab-videos">
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/YE7VzlLtp-4"
-                frameborder="0" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+    <!-- Tab Content: Videos -->
+    <div class="tabs-content hidden" id="tab-videos">
+      <div class="grid grid-cols-1 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/YE7VzlLtp-4" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
               Big Buck Bunny
             </h3>
-            <p class="subtitle has-text-grey-light">
-              Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three
-              rodents
-              rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he
-              prepares the nasty rodents a comical revenge.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/Vtie-65eJ3U"
-                frameborder="0" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
-              AI-Driven Digital Transformation | Ekohe
-            </h3>
-            <p class="subtitle has-text-grey-light">
-              From AI-driven predictive insights to machine learning automation, Ekohe delivers best-in-class, custom digital
-              solutions that move your business forward.
-            </p>
-            <p class="description">
-              AI, Machine Learning,Data Science, and Agile Development.ruby on rails agency, custom mobile app development,
-              custom
-              web
-              app development, android app developers, android application developer, android applications development,
-              android apps
-              development, android software development, app designer, app development cost, apple ios developer, apple app
-              developer,
-              iphone app developer, create an android app, create android app, creating android apps, create ios app, creating
-              iphone
-              apps, design mobile website, develop iphone apps, developing apps for android, developing for android,
-              developing
-              iphone
-              apps, how to create an app for android, Ruby on Rails web design, Ruby on Rails consulting, Ruby on Rails
-              service,
-              Ruby
-              on Rails consultant, Ruby on Rails expertise, app developer Shanghai, app developer Paris, app developer
-              Vancouver,
-              app
-              developer Tokyo
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain't no bunny anymore!
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="tabs-content is-hidden" id="tab-documents">
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/UwsrzCVZAb8"
-                frameborder="0" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+    <!-- Tab Content: Documents -->
+    <div class="tabs-content hidden" id="tab-documents">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/UwsrzCVZAb8" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
               How Far is Too Far? | The Age of A.I.
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-              Can A.I. make music? Can it feel excitement and fear? Is it alive? Will.i.am and Mark Sagar push the limits of what a
-              machine can do. How far is too far, and how much further can we go?
-
-              The Age of A.I. is a 8 part documentary series hosted by Robert Downey Jr. covering the ways Artificial Intelligence,
-              Machine Learning and Neural Networks will change the world.
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              Can A.I. make music? Can it feel excitement and fear? Is it alive? Will.i.am and Mark Sagar push the limits of what a machine can do.
             </p>
           </div>
         </div>
-      </div>
 
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/63yr9dlI0cU" frameborder="0"
-                allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/63yr9dlI0cU" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
               TIMELAPSE OF ARTIFICIAL INTELLIGENCE (2028 – 3000+)
             </h3>
-            <p class="subtitle has-text-grey-light">
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              A documentary and journey into the future exploring the possibilities and predictions of artificial intelligence.
             </p>
-            <p class="description">
-              A documentary and journey into the future exploring the possibilities and predictions of artificial intelligence. This
-              timelapse of the future explores what is coming, from robots that are too fast for humans to see, to A.I. bots from
-              Microsoft (bringing back loved ones to life) and Google’s laMDA (replacing the need for online searches).
+          </div>
+        </div>
 
-              Elon Musk’s Neuralink goes from a medical and healthcare device, to helping people become superhuman – with intelligence
-              amplification, and add-ons that connect to the brain chip.
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/Aw3R-4UC4wI" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              What Elon Musk's 42,000 Satellites Could Do To Earth
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              SpaceX hopes to bring high-speed satellite internet to every corner of the world. But experts worry it may come at a hefty cost.
+            </p>
+          </div>
+        </div>
 
-              Artificial general intelligence begins to design an A.I. more powerful than itself. People begin to question if humanity
-              has reached the technological singularity. Artificial Super Intelligence emerges from the AGI.
-
-              And further into the deep future. Human consciousness becomes digitized and uploaded into a metaverse simulation. It is
-              merged with A.I. creating hybrid consciousness – which spreads across the cosmos. Matrioshka brains and Dyson Spheres
-              host humanity’s consciousness in a cosmic simulation network.
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/ajGgd9Ld-Wc" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              How AI can save our humanity | Kai-Fu Lee
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              AI is massively transforming our world, but there's one thing it cannot do: love. A visionary talk by computer scientist Kai-Fu Lee.
             </p>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="columns">
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/Aw3R-4UC4wI"
-                frameborder="0" allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
-              What Elon Musk's 42,000 Satellites Could Do To Earth
+    <!-- Tab Content: AI Agents -->
+    <div class="tabs-content hidden" id="tab-ai-agents">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/K27diMbCsuw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              Introducing Manus: The General AI Agent
             </h3>
-            <p class="subtitle has-text-grey-light">
-            </p>
-            <p class="description">
-              Over the next few decades, Elon Musk is hoping to send 42,000 Starlink satellites to space. With these satellites,
-              SpaceX hopes to bring high-speed satellite internet to every corner of the world. But experts worry it may come at a
-              hefty cost, blocking astronomers' views and potentially space exploration for decades.
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              Manus is a general AI agent designed to handle various work and life tasks autonomously. A breakthrough in AI agent capabilities.
             </p>
           </div>
         </div>
 
-        <div class="column">
-          <div class="box">
-            <figure class="image is-16by9">
-              <iframe class="has-ratio" width="640" height="360" src="https://www.youtube.com/embed/ajGgd9Ld-Wc" frameborder="0"
-                allowfullscreen></iframe>
-            </figure>
-            <hr />
-            <h3 class="title has-text-grey">
-              How AI can save our humanity | Kai-Fu Lee
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/LP5OCa20Zpg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              Tips for Building AI Agents | Anthropic
             </h3>
-            <p class="subtitle has-text-grey-light">
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              Anthropic experts discuss AI agent potential, common pitfalls, and preparation for 2025. Covers agent fundamentals and developer advice.
             </p>
-            <p class="description">
-              AI is massively transforming our world, but there's one thing it cannot do: love. In a visionary talk, computer
-              scientist Kai-Fu Lee details how the US and China are driving a deep learning revolution -- and shares a blueprint for
-              how humans can thrive in the age of AI by harnessing compassion and creativity. "AI is serendipity," Lee says. "It is
-              here to liberate us from routine jobs, and it is here to remind us what it is that makes us human."
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/M6pNfocrCe8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              DeepAgent - The World's First God Tier AI Agent
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              DeepAgent demonstrates full-stack website building, research-grade presentations, and integrations with JIRA, Slack, and Gmail.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/ZaY5_ScmiFE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              An Introduction to AI Agents (for 2025)
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              A comprehensive introduction to AI agents covering what they are, how they work, and why they matter for the future of automation.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/sHcu0YX-1u4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              Building an Agent with Claude 3.7 Sonnet
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              Learn how to build intelligent agents using Anthropic's Claude 3.7, the new reasoning model with extended thinking mode and tool-calling.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg shadow-slate-200/50 overflow-hidden group hover:shadow-xl transition-all duration-200 cursor-pointer border border-slate-100">
+          <div class="aspect-video relative overflow-hidden">
+            <iframe class="absolute inset-0 w-full h-full" src="https://www.youtube.com/embed/BGltHLInYDg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-5">
+            <h3 class="font-heading font-semibold text-slate-800 group-hover:text-blue-600 transition-colors duration-200 mb-2">
+              Building Intelligent AI Agents with smolagents
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed line-clamp-3">
+              Technical deep-dive covering building agents with open-source language models, multi-agent frameworks using Hugging Face tools.
             </p>
           </div>
         </div>
@@ -299,19 +302,30 @@
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script>
     $(function () {
-      // Check for click events on the navbar burger icon
-      $("div.tabs ul li").on('click', function(event) {
+      // Tab styling
+      function updateTabStyles() {
+        $(".tab-btn").each(function() {
+          if ($(this).hasClass('is-active')) {
+            $(this).addClass('bg-blue-600 text-white shadow-md').removeClass('text-slate-600 hover:bg-slate-50');
+          } else {
+            $(this).removeClass('bg-blue-600 text-white shadow-md').addClass('text-slate-600 hover:bg-slate-50');
+          }
+        });
+      }
+      updateTabStyles();
+
+      // Tab click handler
+      $(".tab-btn").on('click', function(event) {
         event.preventDefault();
-        $this = $(this);
+        var $this = $(this);
 
-        if ($this.hasClass('is-active')) {
-          // Nothing to do
-        } else {
-          $this.siblings().removeClass("is-active");
+        if (!$this.hasClass('is-active')) {
+          $(".tab-btn").removeClass("is-active");
           $this.addClass("is-active");
+          updateTabStyles();
 
-          $("div.tabs-content:not(.is-hidden)").addClass("is-hidden");
-          $('#' + $this.data('tabname')).removeClass('is-hidden');
+          $(".tabs-content:not(.hidden)").addClass("hidden");
+          $('#' + $this.data('tabname')).removeClass('hidden');
         }
       });
     });

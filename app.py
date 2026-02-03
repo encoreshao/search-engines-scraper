@@ -31,64 +31,57 @@ def video():
     return render_template('video.html')
 
 
+def get_search_engine(browser):
+    '''Returns the appropriate search engine instance.'''
+    engines = {
+        'google': Google,
+        'bing': Bing,
+        'aol': Aol,
+        'ask': Ask,
+        'torch': Torch,
+        'qwant': Qwant,
+        'mojeek': Mojeek,
+        'dogpile': Dogpile,
+        'duckduckgo': Duckduckgo,
+    }
+    if browser not in engines:
+        raise ValueError('Unknown browser: %s' % browser)
+    return engines[browser]()
+
+
 @app.route("/scraper", methods=['POST', 'GET'])
 def scraper():
     content_type = request.headers.get('Content-Type')
-    if (content_type == 'application/json'):
-        keyword = request.json['q']
-        browser = request.json['browser']
-        pages = int(request.json['pages'])
-        if browser == 'google':
-            response = Google().search(keyword, pages)
-        elif browser == 'bing':
-            response = Bing().search(keyword, pages)
-        elif browser == 'aol':
-            response = Aol().search(keyword, pages)
-        elif browser == 'ask':
-            response = Ask().search(keyword, pages)
-        elif browser == 'torch':
-            response = Torch().search(keyword, pages)
-        elif browser == 'qwant':
-            response = Qwant().search(keyword, pages)
-        elif browser == 'mojeek':
-            response = Mojeek().search(keyword, pages)
-        elif browser == 'dogpile':
-            response = Dogpile().search(keyword, pages)
-        elif browser == 'duckduckgo':
-            response = Duckduckgo().search(keyword, pages)
+    
+    try:
+        if (content_type == 'application/json'):
+            keyword = request.json['q']
+            browser = request.json['browser']
+            pages = int(request.json['pages'])
+            
+            engine = get_search_engine(browser)
+            response = engine.search(keyword, pages)
+
+            return render_template('components/_search_results.html',
+                                   keyword=keyword,
+                                   results=response.results())
         else:
-            raise ValueError('Unknown browser: %s' % browser)
+            keyword = request.args.get('q')
+            pages = int(request.args.get('pages', 1))
+            browser = request.args.get('browser')
 
-        return render_template('components/_search_results.html',
-                               keyword=keyword,
-                               results=response.results())
-    else:
-        keyword = request.args.get('q')
-        pages = int(request.args.get('pages', 1))
-        browser = request.args.get('browser')
+            engine = get_search_engine(browser)
+            response = engine.search(keyword, pages)
 
-        if browser == 'google':
-            response = Google().search(keyword, pages)
-        elif browser == 'bing':
-            response = Bing().search(keyword, pages)
-        elif browser == 'aol':
-            response = Aol().search(keyword, pages)
-        elif browser == 'ask':
-            response = Ask().search(keyword, pages)
-        elif browser == 'torch':
-            response = Torch().search(keyword, pages)
-        elif browser == 'qwant':
-            response = Qwant().search(keyword, pages)
-        elif browser == 'mojeek':
-            response = Mojeek().search(keyword, pages)
-        elif browser == 'dogpile':
-            response = Dogpile().search(keyword, pages)
-        elif browser == 'duckduckgo':
-            response = Duckduckgo().search(keyword, pages)
-        else:
-            raise ValueError('Unknown browser: %s' % browser)
-
-        return jsonify(response.results()), 201
+            return jsonify(response.results()), 201
+    except Exception as e:
+        # Log the error but return empty results instead of 500
+        print(f"Search error ({browser}): {type(e).__name__}: {e}")
+        if content_type == 'application/json':
+            return render_template('components/_search_results.html',
+                                   keyword=keyword if 'keyword' in dir() else '',
+                                   results=[])
+        return jsonify([]), 200
 
 
 if __name__ == '__main__':

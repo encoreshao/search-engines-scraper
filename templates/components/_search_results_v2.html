@@ -1,30 +1,95 @@
-{% for item in results %}
-<div class="is-flex-direction-column m-1">
-  <div class="card">
-    <div class="card-content">
-      <p class="title has-text-info">
-        {{ item.title }}
-      </p>
-      <p class="subtitle">
-        <span class='tag is-link ml-auto has-text-weight-bold is-uppercase'>
-          <i class="fas fa-sitemap pr-2" aria-hidden="true"></i>
-          {{ item.host }}
-        </span>
-      </p>
-      {% if item.text %}
-      <div class="content">
-        {{ item.text }}
+{% if results %}
+  <!-- Results Header -->
+  <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/20">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
       </div>
-      {% endif %}
+      <div>
+        <h2 class="font-heading font-semibold text-slate-800 text-lg">Search Results</h2>
+        <p class="text-sm text-slate-500">Found <span class="font-semibold text-blue-600">{{ results|length }}</span> results</p>
+      </div>
     </div>
-
-    <footer class="card-footer">
-      <p class="card-footer-item">
-        <span>
-          View on <a href={{ item.link }} class="has-text-link">Website</a>
-        </span>
-      </p>
-    </footer>
   </div>
-</div>
-{% endfor %}
+
+  <!-- Results Cards -->
+  <div class="grid gap-5">
+    {% for item in results %}
+      <div class="group bg-white rounded-2xl border border-slate-100 hover:border-blue-200 
+                  shadow-sm hover:shadow-xl hover:shadow-blue-500/10
+                  transition-all duration-300 overflow-hidden">
+        <div class="p-6">
+          <!-- Title -->
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer" class="block cursor-pointer">
+            <h3 class="font-heading font-semibold text-lg text-blue-600 group-hover:text-blue-700 
+                       transition-colors duration-200 line-clamp-2 mb-3">
+              {{ item.title }}
+            </h3>
+          </a>
+          
+          <!-- Host Badge -->
+          <div class="flex items-center gap-3 mb-4">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 text-slate-600 rounded-lg text-sm font-medium">
+              <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+              </svg>
+              {{ item.host }}
+            </span>
+          </div>
+          
+          <!-- Description -->
+          {% if item.text %}
+            <p class="text-slate-600 text-sm leading-relaxed line-clamp-3">
+              {{ item.text }}
+            </p>
+          {% endif %}
+        </div>
+        
+        <!-- Footer -->
+        <div class="px-6 py-4 bg-slate-50/50 border-t border-slate-100 flex items-center justify-between">
+          <a href="{{ item.link }}" target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 cursor-pointer transition-colors duration-200 group/link">
+            <span>Visit Website</span>
+            <svg class="w-4 h-4 transform group-hover/link:translate-x-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+          
+          <button class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg transition-all duration-200 cursor-pointer"
+                  onclick="navigator.clipboard.writeText('{{ item.link }}')" title="Copy link">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Results Footer -->
+  <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+    <p class="text-sm text-slate-400">
+      Results scraped from search engine. Click any result to open in a new tab.
+    </p>
+  </div>
+{% else %}
+  <!-- No Results State -->
+  <div class="bg-slate-50 border border-slate-100 rounded-2xl p-10 text-center">
+    <div class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-5">
+      <svg class="w-8 h-8 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+    </div>
+    <h3 class="font-heading text-xl font-semibold text-slate-700 mb-2">No Results Found</h3>
+    <p class="text-slate-500 max-w-md mx-auto mb-6">
+      We couldn't find any results for your search. This might be due to the search engine blocking requests.
+    </p>
+    <div class="flex flex-wrap items-center justify-center gap-3">
+      <span class="text-sm text-slate-500">Try:</span>
+      <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium">Bing</span>
+      <span class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium">AOL</span>
+    </div>
+  </div>
+{% endif %}

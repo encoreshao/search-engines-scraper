@@ -47,14 +47,19 @@ class Duckduckgo(SearchEngine):
 
     def _filter_results(self, soup):
         '''Processes and filters the search results.''' 
+        if not self._current_page:
+            return []
         match = re.search(self._selectors('results'), self._current_page)
         if not match:
-            return {}
-        data = json.loads(re.sub('\n|\r', '', match.group(1)))[:-1]
-        results = [
-            {'link':i['u'], 'title':i['t'], 'text': BeautifulSoup(i['a'], 'html.parser').get_text()} 
-            for i in data
-        ]
+            return []
+        try:
+            data = json.loads(re.sub('\n|\r', '', match.group(1)))[:-1]
+            results = [
+                {'link':i['u'], 'title':i['t'], 'text': BeautifulSoup(i['a'], 'html.parser').get_text()} 
+                for i in data if 'u' in i and 't' in i
+            ]
+        except (json.JSONDecodeError, KeyError, TypeError):
+            return []
 
         if u'url' in self._filters:
             results = [l for l in results if self._query_in(l['link'])]
