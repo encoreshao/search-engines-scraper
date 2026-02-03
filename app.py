@@ -1,8 +1,5 @@
-import subprocess
-from urllib import response
 from flask import Flask, render_template, jsonify, request
 import threading
-import requests
 from search_engines import Google, Bing, Aol, Duckduckgo, Ask, Torch, Qwant, Mojeek, Dogpile
 
 host_name = '0.0.0.0'
@@ -52,13 +49,13 @@ def get_search_engine(browser):
 @app.route("/scraper", methods=['POST', 'GET'])
 def scraper():
     content_type = request.headers.get('Content-Type')
-    
+
     try:
         if (content_type == 'application/json'):
             keyword = request.json['q']
             browser = request.json['browser']
             pages = int(request.json['pages'])
-            
+
             engine = get_search_engine(browser)
             response = engine.search(keyword, pages)
 

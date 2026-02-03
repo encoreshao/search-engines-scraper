@@ -1,7 +1,7 @@
 {% extends 'layouts/application.html' %}
 
 {% block head_title %}
-  SearchBot - Multi-Engine Web Search Tool | RanBOT Labs
+  Goooogle - Multi-Engine Web Search Tool | RanBOT Labs
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,9 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
         </svg>
       </div>
-      
+
       <h1 class="font-heading text-4xl sm:text-5xl font-bold text-slate-900 mb-3 tracking-tight">
-        SearchBot
+        Goooogle
       </h1>
       <p class="text-lg text-slate-600 font-medium">
         Search across <span class="text-blue-600 font-semibold">multiple engines</span> in one place
@@ -32,7 +32,7 @@
           <div class="flex items-center gap-2">
             <!-- Engine Selector -->
             <div class="relative flex-shrink-0">
-              <select id="browser" 
+              <select id="browser"
                       class="h-12 pl-4 pr-10 bg-slate-50 hover:bg-slate-100 border-0 rounded-xl text-slate-700 font-medium text-sm
                              appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200">
                 <option value='bing' selected>Bing</option>
@@ -51,20 +51,20 @@
                 </svg>
               </div>
             </div>
-            
+
             <!-- Search Input -->
             <div class="flex-1 relative">
-              <input type="text" 
-                     id="keyword" 
+              <input type="text"
+                     id="keyword"
                      placeholder="What are you looking for?"
                      autocomplete="off"
                      class="w-full h-12 px-4 bg-transparent border-0 text-slate-800 text-lg placeholder:text-slate-400
                             focus:outline-none focus:ring-0">
             </div>
-            
+
             <!-- Results Count -->
             <div class="relative flex-shrink-0">
-              <select id="pages" 
+              <select id="pages"
                       class="h-12 pl-4 pr-10 bg-slate-50 hover:bg-slate-100 border-0 rounded-xl text-slate-700 font-medium text-sm
                              appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/20 transition-all duration-200">
                 {% for page in range(1, 7) %}
@@ -77,12 +77,12 @@
                 </svg>
               </div>
             </div>
-            
+
             <!-- Search Button -->
-            <button id="search" 
-                    class="h-12 px-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 
+            <button id="search"
+                    class="h-12 px-6 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600
                            text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25
-                           hover:shadow-xl hover:shadow-blue-500/30 
+                           hover:shadow-xl hover:shadow-blue-500/30
                            transition-all duration-200 cursor-pointer flex items-center gap-2
                            disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,7 +92,7 @@
             </button>
           </div>
         </div>
-        
+
         <!-- Keyboard Shortcut Hint -->
         <div class="px-4 pb-3 flex items-center justify-center gap-4 text-xs text-slate-400">
           <span class="flex items-center gap-1.5">
@@ -101,7 +101,7 @@
           </span>
         </div>
       </div>
-      
+
       <!-- Engine Status Pills -->
       <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
         <span class="text-xs text-slate-500 mr-1">Recommended:</span>
@@ -126,75 +126,69 @@
       <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
         <div class="flex items-center gap-3">
           <div class="relative">
-            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-              <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
               </svg>
             </div>
-            <div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+            <div class="absolute -top-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
           </div>
           <div>
             <p class="font-heading font-semibold text-slate-800">Searching...</p>
-            <p class="text-sm text-slate-500 flex items-center gap-1.5">
-              <span class="inline-block w-1.5 h-1.5 bg-blue-500 rounded-full animate-ping"></span>
-              Fetching results
-            </p>
+            <p class="text-sm text-slate-500">Fetching results from search engine</p>
           </div>
         </div>
-        <div class="flex items-center gap-1">
-          <div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 0ms; animation-duration: 0.6s;"></div>
-          <div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 100ms; animation-duration: 0.6s;"></div>
-          <div class="w-2 h-2 bg-blue-500 rounded-full animate-bounce" style="animation-delay: 200ms; animation-duration: 0.6s;"></div>
+        <!-- Smooth wave dots -->
+        <div class="flex items-center gap-1.5">
+          <div class="w-2 h-2 bg-blue-500 rounded-full dot-wave" style="--delay: 0s;"></div>
+          <div class="w-2 h-2 bg-blue-500 rounded-full dot-wave" style="--delay: 0.15s;"></div>
+          <div class="w-2 h-2 bg-blue-500 rounded-full dot-wave" style="--delay: 0.3s;"></div>
         </div>
       </div>
       
       <!-- Skeleton Cards -->
       <div class="space-y-4">
         <!-- Skeleton Card 1 -->
-        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden">
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden skeleton-fade" style="--delay: 0s;">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl skeleton-shimmer flex-shrink-0"></div>
             <div class="flex-1 space-y-3">
               <div class="h-5 w-3/4 rounded-lg skeleton-shimmer"></div>
               <div class="h-4 w-1/3 rounded-md skeleton-shimmer"></div>
             </div>
-            <div class="w-8 h-8 rounded-lg skeleton-shimmer flex-shrink-0"></div>
           </div>
         </div>
         
         <!-- Skeleton Card 2 -->
-        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden">
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden skeleton-fade" style="--delay: 0.1s;">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl skeleton-shimmer flex-shrink-0"></div>
             <div class="flex-1 space-y-3">
               <div class="h-5 w-2/3 rounded-lg skeleton-shimmer"></div>
               <div class="h-4 w-1/4 rounded-md skeleton-shimmer"></div>
             </div>
-            <div class="w-8 h-8 rounded-lg skeleton-shimmer flex-shrink-0"></div>
           </div>
         </div>
         
         <!-- Skeleton Card 3 -->
-        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden">
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden skeleton-fade" style="--delay: 0.2s;">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl skeleton-shimmer flex-shrink-0"></div>
             <div class="flex-1 space-y-3">
               <div class="h-5 w-4/5 rounded-lg skeleton-shimmer"></div>
               <div class="h-4 w-2/5 rounded-md skeleton-shimmer"></div>
             </div>
-            <div class="w-8 h-8 rounded-lg skeleton-shimmer flex-shrink-0"></div>
           </div>
         </div>
         
         <!-- Skeleton Card 4 (faded) -->
-        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden opacity-60">
+        <div class="bg-white rounded-xl border border-slate-100 shadow-sm p-5 overflow-hidden opacity-40">
           <div class="flex items-start gap-4">
             <div class="w-12 h-12 rounded-xl skeleton-shimmer flex-shrink-0"></div>
             <div class="flex-1 space-y-3">
               <div class="h-5 w-1/2 rounded-lg skeleton-shimmer"></div>
               <div class="h-4 w-1/3 rounded-md skeleton-shimmer"></div>
             </div>
-            <div class="w-8 h-8 rounded-lg skeleton-shimmer flex-shrink-0"></div>
           </div>
         </div>
       </div>
@@ -218,22 +212,22 @@
 
     // Enter key support
     $("#keyword").on('keyup', function (event) {
-      if (event.keyCode === 13) { 
-        $("#search:not(:disabled)").trigger('click'); 
+      if (event.keyCode === 13) {
+        $("#search:not(:disabled)").trigger('click');
       }
     });
 
     // Search button click
     $("#search").on('click', function(event) {
       event.preventDefault();
-      
+
       if ($(this).prop('disabled')) return;
-      
+
       var $keyword = $("#keyword").val().trim();
       var $pages = $("#pages").val();
       var $browser = $("#browser").val();
 
-      if ($keyword === '') { 
+      if ($keyword === '') {
         $("#keyword").addClass("placeholder:text-red-400").focus();
         setTimeout(() => $("#keyword").removeClass("placeholder:text-red-400"), 2000);
         return;
@@ -247,13 +241,13 @@
       $this.prop('disabled', true);
       $this.addClass('min-w-[44px]');
       $this.html(`
-        <div class="flex items-center justify-center gap-1">
-          <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 0ms; animation-duration: 0.5s;"></span>
-          <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 75ms; animation-duration: 0.5s;"></span>
-          <span class="w-1.5 h-1.5 bg-white rounded-full animate-bounce" style="animation-delay: 150ms; animation-duration: 0.5s;"></span>
+        <div class="flex items-center justify-center gap-1.5">
+          <span class="w-1.5 h-1.5 bg-white rounded-full dot-wave" style="--delay: 0s;"></span>
+          <span class="w-1.5 h-1.5 bg-white rounded-full dot-wave" style="--delay: 0.15s;"></span>
+          <span class="w-1.5 h-1.5 bg-white rounded-full dot-wave" style="--delay: 0.3s;"></span>
         </div>
       `);
-      
+
       $progress.removeClass('hidden');
       $results.html('');
 
@@ -272,7 +266,7 @@
           <span class="hidden sm:inline">Search</span>
         `);
         $results.html(response);
-        
+
         // Scroll to results smoothly
         if (response.includes('Found')) {
           $('html, body').animate({

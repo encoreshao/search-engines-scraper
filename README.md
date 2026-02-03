@@ -1,4 +1,4 @@
-# SearchBot
+# Goooogle
 
 A modern, SaaS-style web search aggregator that scrapes results from multiple search engines including Bing, AOL, Google, DuckDuckGo, and more.
 
